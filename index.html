@@ -14,13 +14,13 @@
     <meta property="og:title" content="Bailey Lockheart 💖"/>
     <meta property="og:type" content="website" />
     <meta property="og:description" content="I wanted to make a little carrd ^-^ this is basically a no-element-limit version of that!"/>
-    <meta property="og:image" content="https://baileylockheart.github.io/images/carrd-dupe.png"/>
+    <meta property="og:image" content="https://baileylockheart-carrd.netlify.app/images/card.png"/>
     <meta property="og:image:height" content="800"/>
     <meta property="og:url" content="https://baileylockheart-carrd.netlify.app#home"/>
     
     <!--and the bird app bc they just have to be special-->
     <meta name="twitter:title" content="Bailey Lockheart 💖" />
-    <meta name="twitter:image" content="https://baileylockheart.github.io/images/carrd-dupe.png">
+    <meta name="twitter:image" content="https://baileylockheart-carrd.netlify.app/images/card.png">
     <meta name="twitter:description" content="I wanted to make a little carrd ^-^ this is basically a no-element-limit version of that!">
     <meta property="twitter:card" content="summary_large_image"/>
     
@@ -28,11 +28,23 @@
 
     <style>
        @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,500;0,700;1,500&family=Alegreya:ital,wght@0,500;0,700;1,500&display=swap');
-        :root{
+        .theme-og{
             --black:#47324a;
             --white:#f7ebf7;
-            --pink:#fbc9ff;
-            --purple:#935adb;
+            --bg:#fbc9ff;
+            --btn:#935adb;
+            --th:#d7c9d7;
+            --hover:#a3719b;
+            --color:#FFB5DA;
+        }
+        .theme-new{
+            --black:#2b231e;
+            --white:#fff1e3;
+            --bg:#ffdb99;
+            --btn:#d46221;
+            --th:#ddb198;
+            --hover:#ffbe6e;
+            --color:#ffeda8;
         }
         html{
             height:100%;
@@ -50,7 +62,7 @@
             top:0;
             transform: scale(1);
             z-index: -700;
-            background-color: var(--pink);
+            background-color: var(--bg);
         }
         body{
             font-family: 'Alegreya', sans-serif;
@@ -58,7 +70,7 @@
             font-size:1rem;
             line-height:normal;
             font-weight:150;
-            background-color: var(--pink);
+            background-color: var(--bg);
         }
         @viewport {
             width: device-width ;
@@ -99,12 +111,12 @@
             text-decoration: underline;
         }
         a:hover{
-            color: #a3719b;
+            color: var(--hover);
             transition: 0.6s ease;
             -webkit-transition: 0.6s ease
         }
         a.color:hover{
-            color:#FFB5DA;
+            color:var(--color);
             transition: 0.6s ease;
             -webkit-transition: 0.6s ease
         }
@@ -135,7 +147,7 @@
         }
         th{
             min-width:6rem;
-            background-color: #d7c9d7;
+            background-color: var(--th);
         }
         #pic{
             float: left;
@@ -185,7 +197,7 @@
           margin:15px
         }
         button {
-          background-color: var(--purple);
+          background-color: var(--btn);
           color:var(--white);
           cursor: pointer;
           min-width: 85px;
@@ -233,7 +245,7 @@
           display: inline-block;
           text-align: center;
           width: 100%;
-          background: var(--purple);
+          background: var(--btn);
           color: var(--white);
           border: solid 2px var(--black);
           border-radius: 15px;
@@ -276,6 +288,25 @@
         }
     </style>
     <script>
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
+        function toggleTheme() {
+            if (localStorage.getItem('theme') === 'theme-og') {
+                setTheme('theme-new');
+            } else {
+                setTheme('theme-og');
+            }
+        }
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-og') {
+                setTheme('theme-og');
+            } else {
+                setTheme('theme-new');
+            }
+        })();
+        
         try {
             document.querySelector(":not(:has(+ *))");
         } catch (error) {
@@ -334,6 +365,7 @@
                 <img class="abtimg" src="/images/colors.jpg">
                 <img class="abtimg" src="/images/pepsi.jpg">
                 <p class="abttext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I've been into Kpop for about three years now! My introduction to it was BTS, but Stray Kids is what really pulled me in. That aside, I've been interested in music for far longer. I've been writing songs since I was nine, and listening to music since day one. As of last year, I'm a published indie artist, and I've been posting more music on YouTube in the time since! I released my first EP on August 21st, 2023. One of the songs on there was inspired by Bang Chan, actually, which I found very fun to write.</p>
+                <button id="switch" onclick="toggleTheme()">Theme Switcher</button>
             </div>
         </div>
         
