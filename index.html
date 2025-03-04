@@ -31,17 +31,17 @@
     <style>
         @font-face {
             font-family: Alegreya;
-            src: url(/fonts/Alegreya-Medium.ttf);
+            src: url("/fonts/Alegreya-Medium.ttf");
         }
 
         @font-face {
             font-family: Alegreya Sans;
-            src: url(/fonts/AlegreyaSans-Medium.ttf);
+            src: url("/fonts/AlegreyaSans-Medium.ttf");
         }
         
         @font-face {
             font-family: Cabin;
-            src: url(/fonts/Cabin-Medium.ttf);
+            src: url("/fonts/Cabin-Medium.ttf");
         }
         .theme-og{
             --black:#47324a;
@@ -51,8 +51,8 @@
             --th:#d7c9d7;
             --hover:#a3719b;
             --color:#FFB5DA;
-            --font1: 'Alegreya', sans-serif;
-            --font2: 'Alegreya Sans', sans-serif;
+            --font1: "Alegreya", sans-serif;
+            --font2: "Alegreya Sans", sans-serif;
             --fontsize1: 16px;
         }
         .theme-new{
@@ -63,8 +63,8 @@
             --th:#ddb198;
             --hover:#ffbe6e;
             --color:#ffeda8;
-            --font1: 'Cabin', sans-serif;
-            --font2: 'Cabin', sans-serif;
+            --font1: "Cabin", sans-serif;
+            --font2: "Cabin", sans-serif;
             --fontsize1: 15px;
         }
         html{
@@ -192,18 +192,6 @@
             margin-left: -5px;
             width:250px;
         }
-        .abtimg{
-            width:120px;
-            height:120px;
-            border: solid var(--black) 2px;
-            border-radius: 15px;
-        }
-        .abttext{
-            font-size: 17px;
-            margin-right: 25px;
-            margin-left: 25px;
-            text-align:start;
-        }
         #center{
             display:table;
             margin-left:auto;
@@ -255,7 +243,6 @@
           text-decoration: none;
           display: inline-flex;
           box-shadow: 0px 0px 5px var(--black);
-          cursor: pointer;
           display: table-cell;
           vertical-align: middle;
         }
@@ -323,7 +310,15 @@
           -webkit-transition: 0.6s ease;
           box-shadow: 0px 0px 5px var(--black);
         }
-
+        #switch{
+          min-width: 85px;
+          transition: 0.3s;
+          font-size:1rem;
+          line-height:1;
+          border-radius:10px;
+          padding: 10px;
+          margin: 0px 0.15rem;
+        }
         .fa-brands{
             font-size: 1.25rem;
         }
@@ -349,15 +344,6 @@
             }
             .tabcontent{      
                 margin-left: 20px;
-            }
-            .abtimg{
-                margin-left: -10px;
-                margin-right: 15px;
-                
-            }
-            .abttext{
-                margin-right: 15px;
-                margin-left: 5px;
             }
         }
     </style>
@@ -414,34 +400,11 @@
                     <p>Any Prns | <span id="age"></span> (07) | INFP-T<br>☼ Capricorn ☾ Libra ⇧ Leo<br>Bi, aroacespec ♡</p>
                     <script>var dob = new Date("01/10/2007");var month_diff = Date.now() - dob.getTime();var age_dt = new Date(month_diff);var year = age_dt.getUTCFullYear();var age = Math.abs(year - 1970);document.getElementById("age").innerHTML = age;</script>
                     <hr>
-                    <p class="left"><b>Likes:</b> Music, web design, games, anime, baking, learning languages<br>
-                        <b>Dislikes:</b> School, deadlines, arguing, bugs, loud noises, cars</p>
-                    
-                    <p class=left><a href="#about">More &darr;</a></p>
+                    <p class="left">
+                    <b>Likes:</b> Music, web design, games, anime, baking, learning languages<br>
+                    <b>Dislikes:</b> School, deadlines, arguing, bugs, loud noises, cars</p>
+                    <button id="switch" onclick="toggleTheme()">Theme Switcher</button>
                 </div>
-            </div>
-        </div>
-
-        <div id="about" class="tabcontent">
-            <div id="center">
-                <img id="pic" src="/images/chan.jpg">
-                    <div class="text">
-                        <h2>Bailey / Jay ⋆˚🐾˖°</h2>
-                        <hr>
-                        <p>Any Prns | <span id="age2"></span> (07) | INFP-T<br>☼ Capricorn ☾ Libra ⇧ Leo<br>Bi, aroacespec ♡</p>
-                        <script>var dob = new Date("01/10/2007");var month_diff = Date.now() - dob.getTime();var age_dt = new Date(month_diff);var year = age_dt.getUTCFullYear();var age = Math.abs(year - 1970);document.getElementById("age2").innerHTML = age;</script>
-                        <hr>
-                        <p class="left"><b>Likes:</b> Music, web design, games, anime, baking, learning languages<br>
-                            <b>Dislikes:</b> School, deadlines, arguing, bugs, loud noises, cars</p>
-                        
-                        <p class=left><a href="#home">Less &uarr;</a></p>
-                    </div>
-                </div>
-            <div id="center">
-                <img class="abtimg" src="/images/colors.jpg">
-                <img class="abtimg" src="/images/pepsi.jpg">
-                <p class="abttext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I've been into Kpop for about three years now! My introduction to it was BTS, but Stray Kids is what really pulled me in. That aside, I've been interested in music for far longer. I've been writing songs since I was nine, and listening to music since day one. As of last year, I'm a published indie artist, and I've been posting more music on YouTube in the time since! I released my first EP on August 21st, 2023. One of the songs on there was inspired by Bang Chan, actually, which I found very fun to write.</p>
-                <button id="switch" onclick="toggleTheme()">Theme Switcher</button>
             </div>
         </div>
         
@@ -469,14 +432,14 @@
                     <p>General (⁠◍⁠•⁠ᴗ⁠•⁠◍⁠)<br>
                         Songwriting, Music Production, Web Design, Drawing, Video Editing, Language Learning, Alt Fashion*<br><br>
                         Music (⁠ﾉ⁠・⁠ω⁠・⁠)⁠ﾉ⁠♫<br>
-                        Madds Buckley, Alien Stage, Addison Grace, Madilyn Mei, Hannah Bahng, Lydia the Bard, Vocaloid, Leanna Firestone<br><br>
+                        Madds Buckley, EPIC: The Musical, Alien Stage, Addison Grace, Madilyn Mei, Hannah Bahng, Lydia the Bard, Vocaloid, Leanna Firestone<br><br>
                         K-Pop ٩(ˊᗜˋ*)و ♡♪<br>
                         Stray Kids (Chan biased), TXT (Hyuka biased), BTS, Enhypen, ZB1, 8Turn, SUPERKIND, ITZY<br><br>
                         Games (⁠✯⁠ᴗ⁠✯⁠)<br>
                         Genshin Impact, Pony Town, Animal Crossing, YTTD, FNaF, Project Sekai, Omori<br><br>
                         Shows (⁠ ⁠ꈍ⁠ᴗ⁠ꈍ⁠)<br>
                         BBC Merlin, Supernatural, Julie and the Phantoms, Arcane**, MLP, Death Note, Haikyuu, Cells at Work, JJK, BNHA, Sk8 the Infinity, Given<br><br>
-                        *I'm INTERESTED in alt fashion but I don't wear much :<<br>
+                        *I'm INTERESTED in alt fashion but I don't wear much :&lt;<br>
                         **I'm not currently caught up on Arcane, JJK, or BNHA!!
                         </p>
                     </div>
